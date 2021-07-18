@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*navbar*/
+.navbar-header {
+  display: contents;
+}
+
+.navbar-left a {
+  color: rgb(248, 249, 250);
+}
+
+.navbar-left a:hover {
+  color: rgb(248, 249, 250);
+  text-decoration: none !important;
+}
+.navbar-left .form-control {
+  width: 180px;
+  display: inline-block;
+  border-radius: 2px;
+  padding-left: 30px;
+}
+
+.navbar-form {
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.header-search {
+  display: inline-block;
+}
+
+.navbar-left {
+  align-items: center;
+  display: flex;
+}
+
+.navbar-left i {
+  position: absolute;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+.navbar-right {
+  align-items: center;
+  display: flex;
+  float: right;
+}
+
+/*navbar btn*/
+.navbar-right .btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary {
+  background-color: #4a90e2 !important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d !important;
+  border-color: #6c757d;
+}
+
+.navbar-collapse .navbar-text {
+  display: contents;
+}
+
+.navbar-text a {
+  margin-left: 10px;
+}
+
+/*notifications*/
+.notifications {
+  color: #fff;
+  text-align: center;
+}
+
+/*top page*/
+.top .top-main {
+  background-image: url("rabbit.jpg");
+  background-size: cover;
+  background-color: yellow;
+  width: 100%;
+  height: auto;
+}
+.top .form-area {
+  background: rgba(248, 249, 250, 0.5);
+  padding: 24px;
+  border-radius: 5px;
+}
+
+.top .form-fream {
+  height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.top .form-area-title {
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1px;
+}
+.top .section-title {
+  font-size: 24px;
+  margin: 35px 0;
+  font-weight: bold;
+}

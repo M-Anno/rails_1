@@ -1,0 +1,51 @@
+<nav class="navbar" style="background-color: black">
+  <div class="navbar-header" style="padding: 10px;">
+    <!-- left nav-->
+    <div class="navbar-left" style="display: flex; align-items: center;">
+      <div>
+        <a href="">
+          <%= link_to image_tag('rabbit.jpg', :height =>'40'),root_path %>
+        </a>
+      </div>
+      <form class="navbar-form" role="search" style="display: flex; align-items: center;">
+        <div class="header-search">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" name="area" id="area" value="" class="form-control" placeholder="Area">
+        </div>
+        <div class="header-search">
+          <i class="fas fa-search"></i>
+          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="Key word">
+        </div>
+      </form>
+    </div>
+    <!-- right nav -->
+    <div class="navbar-right">
+      <div class="navbar-sign-in">
+        <% if user_signed_in? %>
+          <strong><%= link_to current_user.name, root_path %></strong>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "button is-success nav-item" %>
+          <div class="nav_menu">
+            <label for="menu_bar01">accordion</label>
+            <input type="checkbox" id="menu_bar01" />
+            <ul id="links01">
+                <li><%= link_to "Register Room", new_room_path %></li>
+                <li><%= link_to "Reservations", rooms_path %></li>
+                <li><%= link_to "Rooms" , rooms_path %></li>
+                <li><%= link_to "Setting", edit_profile_path(current_user.id) %></li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link_to("Sign up", new_user_registration_path, { class: "btn btn-primary"}) %>
+          <%= link_to("Log in", new_user_session_path, { class: "btn btn-secondary"}) %>
+          <div class="nav_menu">
+            <label for="menu_bar01">accordion</label>
+            <input type="checkbox" id="menu_bar01" />
+            <ul id="links01">
+                <li><%= link_to "Register Room", new_room_path %></li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
