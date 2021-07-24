@@ -1,5 +1,4 @@
 class RoomsController < ApplicationController
-  bedore_action :authenticate_user!
   before_action :find_room, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -19,15 +18,15 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to root_path, notice: "Succeed!"
+      redirect_to rooms_path, notice: "Succeeded!"
     else
       render :new
     end
   end
   
   def update
-    if @room.update
-      redirect_to root_path, notice: "Updated!"
+    if @room.update(room_params)
+      redirect_to rooms_path, notice: "Updated!"
     else
       render :edit
     end
@@ -45,7 +44,7 @@ class RoomsController < ApplicationController
   
   def room_params
     params.require(:room).permit(
-      :name, :room_introduction, :fee, :address, :image, :crerated_date
+      :name, :room_introduction, :fee, :address, :image
     )
   end
 

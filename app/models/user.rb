@@ -9,5 +9,17 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 200 }
   
   has_one :profile, dependent: :destroy
-  accepts_nested_attributes_for :profile
+  before_create :build_default_profile
+  private
+  def build_default_profile
+    build_profile
+    true
+  end
+  
+  has_many :reservarions
+  has_many :rooms
+  
+  def self.find_by_uid!(uid)
+    User.find_by!("name = :p OR id = :p", p: uid)
+  end
 end

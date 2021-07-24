@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: 
+  user: 
+  fee: 1
+  start_date: 2021-07-22
+  end_date: 2021-07-22
+  people: 1
+  days: 1
+  total: 1
+
+two:
+  room: 
+  user: 
+  fee: 1
+  start_date: 2021-07-22
+  end_date: 2021-07-22
+  people: 1
+  days: 1
+  total: 1

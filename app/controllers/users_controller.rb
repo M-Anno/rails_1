@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_profile, only: [:show, :edit, :update]
+  # before_action :find_profile, only: [:show, :edit, :update]
   
   def index
+    @users = User.all
   end
   
   def new
@@ -16,15 +17,15 @@ class UsersController < ApplicationController
   def create
     @profile = Profile.find(params[:id])
     if @profile.save
-     flash[:success] = "Profile updated!"
+    flash[:success] = "Profile updated!"
       render :show
     else
-     render action: :new
+    render action: :new
     end
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_uid!(params[:id])
   end
   
   private

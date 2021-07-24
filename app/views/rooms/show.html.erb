@@ -1,0 +1,27 @@
+<div class="container" style="display: flex">
+  <h1 style="display: block; width: 100%; position: absolute;">Make a reservation</h1>
+  <!--Left: room information-->
+  <div class="room_information">
+    <div class="field">
+      <%= @room.image %>
+    </div>
+    <div class="field">
+      <%= @room.name %>
+    </div>
+    <div class="field">
+      <%= @room.address %>
+    </div>
+    <div class="field">
+      <%= @room.room_introduction %>
+    </div>
+    <div class="link"><%= link_to "<Back>", rooms_path %></div>
+  </div>
+  <!--Right: reservation form-->
+  <div class="reservation_form">
+    <div class="field" style="font-size: 25px;">
+      <%= @room.fee %> yen/day
+    </div>
+    <!--Reservation form-->
+    <%= render 'shared/reservation-show' %>
+  </div>
+</div>
