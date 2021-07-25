@@ -9,15 +9,14 @@
   </div>
   <div class="form_group">
     <%= f.label :Fee %><br/>
-    <%= f.text_field :fee %><br>
+    <%= f.number_field :fee, min: "0" %><br>
   </div>
   <div class="form_group">
     <%= f.label :Address %><br/>
     <%= f.text_field :address %><br>
   </div>
-  <div class="form_group">
-    <%= f.label :Image %><br/>
-    <%= f.text_field :image %><br>
+  <div style="margin-top: 30px;">
+    <%= f.attachment_field :image %><br/>
   </div>
   <div class="submit_block">
     <%= f.submit class: "button" %>

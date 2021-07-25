@@ -12,7 +12,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require('common')
+require('user/common')
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

@@ -2,9 +2,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_profile, only: [:show, :edit, :update]
   
-  
   def show
-    
   end
   
   def new
@@ -28,14 +26,13 @@ class ProfilesController < ApplicationController
   
   def update
     if @profile.update(profile_params)
-      redirect_to root_path, notice: "Your profile was updated!!!"
+      redirect_to profile_path, notice: "Your profile was updated!!!"
     else
       render :edit
     end
   end
 
   def destroy
-    
   end
 
   private
@@ -45,6 +42,6 @@ class ProfilesController < ApplicationController
   end
   
   def profile_params
-    params.require(:profile).permit(:name, :avatar, :introduction)
+    params.require(:profile).permit(:name, :image, :introduction)
   end
 end

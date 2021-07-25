@@ -6,7 +6,7 @@
   
     <div class="form_group">
       <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "your name" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
     </div>
   
     <div class="form_group">
@@ -36,12 +36,12 @@
       <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div>
-    
+  <% end %>  
   <h3>Cancel my account</h3>
   
   <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   
-  <div class="submit_block">
+  <div class="link">
     <%= link_to "Back", :back %>
   </div>
 </div>

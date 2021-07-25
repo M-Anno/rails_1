@@ -1,20 +1,15 @@
-<div>
-  <h1>show your profile</h1>
-  <%= form_with model: @profile, local: true do |f| %>
-    <div class="form-group">
-      <%= f.label :avatar %> 
-      <%= f.text_field :avatar %>
-    </div>
-    <div class="form-group">
-      <%= f.label :name %> 
-      <%= f.text_field :name %>
-    </div>
-    <div class="form-group">
-      <%= f.label :introduction %> 
-      <%= f.text_area :introduction %><br>
-    </div>
-    <div class="submit-block">
-      <%= f.submit class: "button" %>
-    </div>
-  <% end %>
+<div class="container">
+  <h2>show your profile</h2>
+  <div class="form_group">
+    <label>Image</label><br/>
+    <%= attachment_image_tag @profile, :image, format: 'jpeg', size: "100x100" %>
+  </div>
+  <div class="form_group">
+    <label>Name</label><br/>
+    <%= @profile.name %>
+  </div>
+  <div class="form_group">
+    <label>Introduction</label><br/>
+    <%= @profile.introduction %>
+  </div>
 </div>

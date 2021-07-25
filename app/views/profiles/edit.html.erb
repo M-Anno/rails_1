@@ -1,34 +1,22 @@
-消す
-
 <div class="container">
-
-  <ul class="tab-list">
-    <li class="tab box-active">Account</li>
-    <li class="tab">Profile</li>
-  </ul>
-  <div class="tabbox-contents">
-    <div class="tabbox box-show">
-      
+  <h2>Edit your profile</h2>
+  <%= form_with model: @profile, local: true do |f| %>
+    <div style="margin-top: 30px;">
+      <%= f.attachment_field :image %><br/>
     </div>
-    <div class="tabbox">
-      <h1>Edit your profile</h1>
-      <%= form_with model: @profile, local: true do |f| %>
-        <div class="form_group">
-          <%= f.label :avatar %><br/>
-          <%= f.text_field :avatar %>
-        </div>
-        <div class="form_group">
-          <%= f.label :name %><br/>
-          <%= f.text_field :name %>
-        </div>
-        <div class="form_group">
-          <%= f.label :introduction %><br/>
-          <%= f.text_area :introduction %>
-        </div>
-        <div class="submit_block">
-          <%= f.submit class: "button" %>
-        </div>
-      <% end %>
-    </div>      
+    <div class="form_group">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form_group">
+      <%= f.label :introduction %><br/>
+      <%= f.text_area :introduction %>
+    </div>
+    <div class="submit_block">
+      <%= f.submit class: "button" %>
+    </div>
+  <% end %>
+  <div class="link">
+    <%= link_to "Back", :back %>
   </div>
 </div>

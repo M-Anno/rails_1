@@ -7,16 +7,6 @@
           <%= link_to image_tag('rabbit.jpg', :height =>'40'),root_path %>
         </a>
       </div>
-      <form class="navbar-form" role="search" style="display: flex; align-items: center;">
-        <div class="header-search">
-          <i class="fas fa-map-marker-alt"></i>
-          <input type="text" name="area" id="area" value="" class="form-control" placeholder="Area">
-        </div>
-        <div class="header-search">
-          <i class="fas fa-search"></i>
-          <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="Key word">
-        </div>
-      </form>
     </div>
     <!-- right nav -->
     <div class="navbar-right">
@@ -31,7 +21,7 @@
             <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-secondary nav-item" %>
           </div>
           <div class="nav_menu">
-            <label for="menu_bar01">accordion</label>
+            <label for="menu_bar01">Menu</label>
             <input type="checkbox" id="menu_bar01" />
             <ul id="links01">
                 <li><%= link_to "Register Room", new_room_path %></li>
@@ -41,18 +31,11 @@
             </ul>
           </div>
         <% else %>
-          <div style="position: absolute; right: 240px; top: 5px; width: max-content;">
+          <div style="position: absolute; right: 90px; top: 5px; width: max-content;">
             <%= link_to("Sign up", new_user_registration_path, { class: "btn btn-primary" }) %>
           </div>
-          <div style="position: absolute; right: 155px; top: 5px; width: max-content;">
+          <div style="position: absolute; right: 5px; top: 5px; width: max-content;">
             <%= link_to("Log in", new_user_session_path, { class: "btn btn-secondary"}) %>
-          </div>
-          <div class="nav_menu">
-            <label for="menu_bar01">accordion</label>
-            <input type="checkbox" id="menu_bar01" />
-            <ul id="links01">
-                <li><%= link_to "Register Room", new_room_path %></li>
-            </ul>
           </div>
         <% end %>
       </div>

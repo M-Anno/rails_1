@@ -1,1 +1,35 @@
-new
+<div class="container">
+  <h2>Confirmation</h2>
+  <%= form_with url: room_reservations_path(@reservation.room_id) do |f| %>
+    <div class="form_group">
+      <label>Fee:</label><br/>
+      <%= @reservation.room.fee %> yen/Person/Day
+    </div>
+    <div class="form_group">
+      <label>Start Day:</label><br/>
+      <%= f.text_field :start_date, value: params[:start_date], :readonly => true %>
+    </div>
+    <div class="form_group">
+      <label>End day:</label><br/>
+      <%= f.text_field :end_date, value: params[:end_date], :readonly => true %>
+    </div>
+    <div class="form_group">
+      <label>Lengt of stay:</label><br/>
+      <%= @reservation.days %> night
+    </div>
+    <div class="form_group">
+      <label>People:</label><br/>
+      <%= f.number_field :people, value: params[:people], :readonly => true %>
+    </div>
+    <div class="form_group">
+      <label>Total fee:</label><br/>
+      <%= @reservation.total %> yen
+    </div>
+    <div class="submit_block">
+      <%= f.submit "Complete" %>
+    </div>
+  <% end %>
+  <div class="link">
+    <%= link_to "Back", :back %>
+  </div>
+</div> 

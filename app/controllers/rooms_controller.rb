@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :find_room, only: [:show, :edit, :update, :destroy]
   
   def index
-    @room = Room.all
+    @rooms = Room.all
   end
   
   def edit
@@ -17,6 +17,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.user_id = current_user.id
     if @room.save
       redirect_to rooms_path, notice: "Succeeded!"
     else
@@ -25,7 +26,9 @@ class RoomsController < ApplicationController
   end
   
   def update
-    if @room.update(room_params)
+    @user = current_user
+    @room.user_id = current_user.id
+    if @room.update!(room_params)
       redirect_to rooms_path, notice: "Updated!"
     else
       render :edit
@@ -43,9 +46,7 @@ class RoomsController < ApplicationController
   private
   
   def room_params
-    params.require(:room).permit(
-      :name, :room_introduction, :fee, :address, :image
-    )
+    params.require(:room).permit(:name, :room_introduction, :fee, :address, :image, :user_id)
   end
 
   def find_room

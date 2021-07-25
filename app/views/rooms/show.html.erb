@@ -1,20 +1,25 @@
 <div class="container" style="display: flex">
-  <h1 style="display: block; width: 100%; position: absolute;">Make a reservation</h1>
   <!--Left: room information-->
   <div class="room_information">
-    <div class="field">
-      <%= @room.image %>
+    <div class="form_group">
+      <label>Image</label><br/>
+      <%= attachment_image_tag @room, :image, format: 'jpeg', size: "600x400", fallback: "no_image.jpg"%>
     </div>
-    <div class="field">
+    <div class="form_group">
+      <label>Name</label><br/>
       <%= @room.name %>
     </div>
-    <div class="field">
+    <div class="form_group">
+      <label>Address</label><br/>
       <%= @room.address %>
     </div>
-    <div class="field">
+    <div class="form_group">
+      <label>Introduction</label><br/>
       <%= @room.room_introduction %>
     </div>
-    <div class="link"><%= link_to "<Back>", rooms_path %></div>
+    <div class="link">
+      <%= link_to "Back", :back %>
+    </div>
   </div>
   <!--Right: reservation form-->
   <div class="reservation_form">
