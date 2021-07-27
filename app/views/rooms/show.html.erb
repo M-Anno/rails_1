@@ -27,6 +27,22 @@
       <%= @room.fee %> yen/day
     </div>
     <!--Reservation form-->
-    <%= render 'shared/reservation-show' %>
+    <%= form_with url: new_room_reservation_path(@room), method: :get do |f| %>
+    <div class="form_group">
+      <%= f.label :Start_day %><br/>
+      <%= f.date_field :start_date %><br>
+    </div>
+    <div class="form_group">
+      <%= f.label :End_day %><br/>
+      <%= f.date_field :end_date %>
+    </div>
+    <div class="form_group">
+      <%= f.label :People %><br/>
+      <%= f.number_field :people %>
+    </div>
+    <div class="submit_block">
+      <%= f.submit class: "button" %>
+    </div>
+  <% end %> 
   </div>
 </div>
