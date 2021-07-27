@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Edit your profile</h2>
+  <%= form_with model: @profile, local: true do |f| %>
+    <div style="margin-top: 30px;">
+      <%= f.attachment_field :image %><br/>
+    </div>
+    <div class="form_group">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form_group">
+      <%= f.label :introduction %><br/>
+      <%= f.text_area :introduction %>
+    </div>
+    <div class="submit_block">
+      <%= f.submit class: "button" %>
+    </div>
+  <% end %>
+  <div class="link">
+    <%= link_to "Back", :back %>
+  </div>
+</div>

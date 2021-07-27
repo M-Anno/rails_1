@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>All rooms</h2>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Introduction</th>
+          <th>Fee</th>
+          <th>Address</th>
+          <th>Created date</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+            <td>
+              <%= attachment_image_tag room, :image, format: 'jpeg', size: "200x100", fallback: "no_image.jpg"%>
+            </td>
+            <td><%= link_to room.name, room_path(room.id) %></td>
+            <td><%= room.room_introduction %></td>
+            <td><%= room.fee %></td>
+            <td><%= room.address %></td>
+            <td><%= room.created_at.strftime('%Y/%m/%d') %></td>
+            <td><%= link_to "Edit", [:edit, room] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Introduction</th>
+          <th>Total fee</th>
+          <th>Start date</th>
+          <th>End date</th>
+          <th>Reserved day</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= attachment_image_tag reservation.room, :image, format: 'jpeg', size: "150x100", fallback: "no_image.jpg" %></td>
+            <td><%= link_to reservation.room.name, room_path(reservation.room.id) %></td>
+            <td><%= reservation.room.room_introduction %></td>
+            <td><%= reservation.total %></td>
+            <td><%= reservation.start_date %></td>
+            <td><%= reservation.end_date %></td>
+            <td><%= reservation.created_at.strftime('%Y/%m/%d') %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

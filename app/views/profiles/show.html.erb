@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>show your profile</h2>
+  <div class="form_group">
+    <label>Image</label><br/>
+    <%= attachment_image_tag @profile, :image, format: 'jpeg', size: "100x100" %>
+  </div>
+  <div class="form_group">
+    <label>Name</label><br/>
+    <%= @profile.name %>
+  </div>
+  <div class="form_group">
+    <label>Introduction</label><br/>
+    <%= @profile.introduction %>
+  </div>
+</div>

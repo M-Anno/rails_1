@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  room_introduction: MyText
+  fee: 1
+  address: MyString
+  image: MyString
+  people: 1
+  created_date: 2021-07-13
+
+two:
+  name: MyString
+  room_introduction: MyText
+  fee: 1
+  address: MyString
+  image: MyString
+  people: 1
+  created_date: 2021-07-13

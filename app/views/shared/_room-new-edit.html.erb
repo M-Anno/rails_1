@@ -1,0 +1,24 @@
+<%= form_with model: @room, local: true do |f| %>
+  <div class="form_group">
+    <%= f.label :Name %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form_group">
+    <%= f.label :Introduction %><br/>
+    <%= f.text_area :room_introduction %>
+  </div>
+  <div class="form_group">
+    <%= f.label :Fee %><br/>
+    <%= f.number_field :fee, min: "0" %><br>
+  </div>
+  <div class="form_group">
+    <%= f.label :Address %><br/>
+    <%= f.text_field :address %><br>
+  </div>
+  <div style="margin-top: 30px;">
+    <%= f.attachment_field :image %><br/>
+  </div>
+  <div class="submit_block">
+    <%= f.submit class: "button" %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<nav class="navbar" style="background-color: black">
+  <div class="navbar-header" style="padding: 10px;">
+    <!-- left nav-->
+    <div class="navbar-left" style="display: flex; align-items: center;">
+      <div>
+        <a href="">
+          <%= link_to image_tag('rabbit.jpg', :height =>'40'),root_path %>
+        </a>
+      </div>
+    </div>
+    <!-- right nav -->
+    <div class="navbar-right">
+      <div class="navbar-sign-in">
+        <% if user_signed_in? %>
+          <strong>
+            <div style="position: absolute; right: 260px; top: 12px; width: max-content;">
+              <%= link_to current_user.name, root_path %>
+            </div>
+          </strong>
+          <div style="position: absolute; right: 155px; top: 5px; width: max-content;">
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-secondary nav-item" %>
+          </div>
+          <div class="nav_menu">
+            <label for="menu_bar01">Menu</label>
+            <input type="checkbox" id="menu_bar01" />
+            <ul id="links01">
+                <li><%= link_to "Register Room", new_room_path %></li>
+                <li><%= link_to "Reservations", reservations_path %></li>
+                <li><%= link_to "Rooms" , rooms_path %></li>
+                <li><%= link_to "Setting", user_path(current_user.id) %></li>
+            </ul>
+          </div>
+        <% else %>
+          <div style="position: absolute; right: 90px; top: 5px; width: max-content;">
+            <%= link_to("Sign up", new_user_registration_path, { class: "btn btn-primary" }) %>
+          </div>
+          <div style="position: absolute; right: 5px; top: 5px; width: max-content;">
+            <%= link_to("Log in", new_user_session_path, { class: "btn btn-secondary"}) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  

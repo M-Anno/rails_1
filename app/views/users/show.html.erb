@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Your account</h2>
+  <div class="tabbox box-show">
+    <div class="form_group">
+      <label>Name: </label>
+      <%= @user.name %>
+    </div>
+    <div class="form_group">
+      <label>E-mail: </label>
+      <%= @user.email %>
+    </div>
+    <div class="form_group">
+      <label>Password: </label>
+      **********
+    </div>
+    <div class="link">
+      <%= link_to("Do you want to edit your account?", edit_user_registration_path, { class: "link" }) %><br/>
+      <%= link_to("Do you want to edit your profile?", edit_profile_path(current_user), { class: "link" }) %><br/>
+      <%= link_to("Your profile is here!", profile_path(current_user), { class: "link" }) %>
+    </div>
+  </div>
+</div>

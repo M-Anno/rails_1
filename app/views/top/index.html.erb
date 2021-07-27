@@ -1,0 +1,41 @@
+<div class="top">
+  <div class="top-main">
+    <!--search box-->
+    <div class="top-search">
+      <p style="line-height: 60px; font-size: 20px;">
+        Where do you want to go by Poteshare?
+      </p>
+      <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+        <label for="___">Area</label>
+        <input type="text" name="area" id="area" value="" class="" placeholder="Tokyo">
+        <input type="submit" name="commit" value="Search" class="btn btn2 btn-primary" data-disable-with="Search">
+      </form>                    
+    </div>
+  </div>
+  <!--Reccomendations-->
+  <div class="top-sub">
+    <p>
+      Recommendations
+    </p>
+    <div class="panel">
+      <div class="panel-item">
+        <span>大阪</span>
+        <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E5%A4%A7%E9%98%AA">
+        <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg">
+        </a>
+      </div>
+      <div class="panel-item">
+        <span>京都</span>
+        <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E5%A4%A7%E9%98%AA">
+        <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg">
+        </a>
+      </div>
+      <div class="panel-item">
+        <span>札幌</span>
+        <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E5%A4%A7%E9%98%AA">
+        <img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

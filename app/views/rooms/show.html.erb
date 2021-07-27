@@ -1,0 +1,48 @@
+<div class="container" style="display: flex">
+  <!--Left: room information-->
+  <div class="room_information">
+    <div class="form_group">
+      <label>Image</label><br/>
+      <%= attachment_image_tag @room, :image, format: 'jpeg', size: "600x400", fallback: "no_image.jpg"%>
+    </div>
+    <div class="form_group">
+      <label>Name</label><br/>
+      <%= @room.name %>
+    </div>
+    <div class="form_group">
+      <label>Address</label><br/>
+      <%= @room.address %>
+    </div>
+    <div class="form_group">
+      <label>Introduction</label><br/>
+      <%= @room.room_introduction %>
+    </div>
+    <div class="link">
+      <%= link_to "Back", :back %>
+    </div>
+  </div>
+  <!--Right: reservation form-->
+  <div class="reservation_form">
+    <div class="field" style="font-size: 25px;">
+      <%= @room.fee %> yen/day
+    </div>
+    <!--Reservation form-->
+    <%= form_with url: new_room_reservation_path(@room), method: :get do |f| %>
+    <div class="form_group">
+      <%= f.label :Start_day %><br/>
+      <%= f.date_field :start_date %><br>
+    </div>
+    <div class="form_group">
+      <%= f.label :End_day %><br/>
+      <%= f.date_field :end_date %>
+    </div>
+    <div class="form_group">
+      <%= f.label :People %><br/>
+      <%= f.number_field :people %>
+    </div>
+    <div class="submit_block">
+      <%= f.submit class: "button" %>
+    </div>
+  <% end %> 
+  </div>
+</div>

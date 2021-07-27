@@ -1,0 +1,28 @@
+.room_overview{
+  width: 100%;
+  text-align: initial;
+}
+
+.room_overviews a {
+  color: black;
+}
+
+.room_box {
+  display: inline-block;
+  height: 250px;
+  margin: 3px 20px 25px 20px;
+}
+
+.room_img{
+  padding: 10px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.result{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
